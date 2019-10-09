@@ -133,4 +133,11 @@ void loop() {
     clearStringBuf();
     Serial.println(F("KeyAgeExpired"));
   }
+
+  // use RX LED to display state: LED=on means key is stored
+  if(stringBuf[0]) {
+    RXLED1;
+  } else {
+    RXLED0;
+  }
 }
